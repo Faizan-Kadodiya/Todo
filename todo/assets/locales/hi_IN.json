@@ -1,0 +1,13 @@
+{
+    "skip":"Skip",
+    "Verify":"Verify",
+    "OTP":"OTP",
+    "alreadySlipstreamer":"Already a Slipstreamer",
+    "name":"Name",
+    "phoneNumber":"Phone number",
+    "signup":"Signup",
+    "signin":"Sign in",
+    "youHavePushedTtheButtonThisManyTimes":"आपने यह बटन कई बार दबाया है",
+    "helloSignupToGetStarted":"Hello!\nSignup to\nget started",
+    "helloAgain_WelcomeBack":"Hello again!\nWelcome\nback"
+}
