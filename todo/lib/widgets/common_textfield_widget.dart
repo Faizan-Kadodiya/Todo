@@ -26,6 +26,7 @@ class AppTextFormField extends StatelessWidget {
   final AutovalidateMode? autovalidateMode;
   final Widget? suffixIcon;
   final Widget? suffix;
+  final bool? autofocus;
 
   const AppTextFormField({
     super.key,
@@ -52,45 +53,44 @@ class AppTextFormField extends StatelessWidget {
     this.autovalidateMode,
     this.suffixIcon,
     this.suffix,
+    this.autofocus,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 46,
-      child: TextFormField(
-        controller: controller,
-        focusNode: focusNode,
-        textInputAction: textInputAction,
-        maxLength: maxLength,
-        maxLines: maxLines,
-        obscureText: obscureText ?? false,
-        readOnly: readOnly ?? false,
-        keyboardType: keyboardType ?? TextInputType.text,
-        textCapitalization: textCapitalization ?? TextCapitalization.none,
-        autovalidateMode: autovalidateMode,
-        inputFormatters: inputFormatters,
-        cursorColor: cursorColor ?? AppColor.blackColor,
-        cursorWidth: cursorWidth ?? 1,
-        style:
-            styleOfWritingText ??
-            const TextStyle(
-              fontSize: 16,
-              color: AppColor.blackColor,
-              fontWeight: FontWeight.w400,
-            ),
-        decoration: InputDecoration(
-          suffix: suffixIcon,
-          hintText: hintText ?? '',
-          label: label,
-          counter: const SizedBox(),
-        ),
-        validator: validator,
-        onFieldSubmitted: onFieldSubmitted,
-        onChanged: onChanged,
-        onTap: onTap,
-        onEditingComplete: onEditingComplete,
+    return TextFormField(
+      controller: controller,
+      focusNode: focusNode,
+      textInputAction: textInputAction,
+      maxLength: maxLength,
+      maxLines: maxLines,
+      obscureText: obscureText ?? false,
+      readOnly: readOnly ?? false,
+      keyboardType: keyboardType ?? TextInputType.text,
+      textCapitalization: textCapitalization ?? TextCapitalization.none,
+      autovalidateMode: autovalidateMode,
+      inputFormatters: inputFormatters,
+      cursorColor: cursorColor ?? AppColor.blackColor,
+      cursorWidth: cursorWidth ?? 1,
+      autofocus: autofocus ?? false,
+      style:
+          styleOfWritingText ??
+          const TextStyle(
+            fontSize: 16,
+            color: AppColor.blackColor,
+            fontWeight: FontWeight.w400,
+          ),
+      decoration: InputDecoration(
+        suffix: suffixIcon,
+        hintText: hintText ?? '',
+        label: label,
+        counter: const SizedBox(),
       ),
+      validator: validator,
+      onFieldSubmitted: onFieldSubmitted,
+      onChanged: onChanged,
+      onTap: onTap,
+      onEditingComplete: onEditingComplete,
     );
   }
 }

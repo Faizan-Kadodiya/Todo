@@ -7,7 +7,7 @@ ThemeData nativeTheme() {
     return ThemeData(
       scaffoldBackgroundColor: AppColor.whiteColor,
       useMaterial3: true,
-      fontFamily: 'Inter',
+      // fontFamily: 'Inter',
       primaryColor: AppColor.primaryColor,
       primaryColorLight: AppColor.primaryLightColor,
       primarySwatch: MaterialColor(0xffFFFFFF, global.lightColor),
@@ -17,16 +17,16 @@ ThemeData nativeTheme() {
         primarySwatch: MaterialColor(0xffFFFFFF, global.lightColor),
       ),
       appBarTheme: const AppBarTheme(
-        backgroundColor: AppColor.whiteColor,
-        centerTitle: false,
+        backgroundColor: AppColor.primaryColor,
+        centerTitle: true,
         elevation: 0,
         titleTextStyle: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w400,
-          color: AppColor.blackColor,
+          color: AppColor.whiteColor,
         ),
-        actionsIconTheme: IconThemeData(color: AppColor.primaryColor),
-        iconTheme: IconThemeData(color: AppColor.primaryColor, size: 25),
+        actionsIconTheme: IconThemeData(color: AppColor.whiteColor),
+        iconTheme: IconThemeData(color: AppColor.whiteColor, size: 25),
       ),
       tabBarTheme: const TabBarThemeData(
         dividerColor: AppColor.blackColor,
@@ -35,9 +35,9 @@ ThemeData nativeTheme() {
         indicatorColor: AppColor.primaryColor,
         indicatorSize: TabBarIndicatorSize.tab,
         labelColor: AppColor.whiteColor, //active
-        labelStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         unselectedLabelColor: AppColor.blackColor,
-        unselectedLabelStyle: TextStyle(fontSize: 20),
+        unselectedLabelStyle: TextStyle(fontSize: 16),
       ),
       dividerTheme: const DividerThemeData(
         thickness: 1.3,
@@ -52,12 +52,12 @@ ThemeData nativeTheme() {
         backgroundColor: AppColor.whiteColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         titleTextStyle: const TextStyle(
-          color: AppColor.primaryButtonColor,
+          color: AppColor.blackColor,
           fontSize: 24,
           fontWeight: FontWeight.w500,
         ),
         contentTextStyle: const TextStyle(
-          color: AppColor.primaryButtonColor,
+          color: AppColor.blackColor,
           fontSize: 14,
           fontWeight: FontWeight.w400,
         ),
@@ -88,8 +88,8 @@ ThemeData nativeTheme() {
         ), //text field title
         titleLarge: TextStyle(
           color: AppColor.blackColor,
-          fontSize: 24,
-          fontWeight: FontWeight.w400,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
         ),
         titleMedium: TextStyle(
           color: AppColor.blackColor,
@@ -187,6 +187,19 @@ ThemeData nativeTheme() {
           ),
         ),
       ),
+      listTileTheme: ListTileThemeData(
+        contentPadding: EdgeInsets.all(0),
+        titleTextStyle: TextStyle(
+          color: AppColor.blackColor,
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+        subtitleTextStyle: TextStyle(
+          color: AppColor.bodyTextColor,
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
     );
   } else {
     return ThemeData(
@@ -237,12 +250,12 @@ ThemeData nativeTheme() {
         backgroundColor: AppColor.whiteColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         titleTextStyle: const TextStyle(
-          color: AppColor.primaryButtonColor,
+          color: AppColor.blackColor,
           fontSize: 24,
           fontWeight: FontWeight.w500,
         ),
         contentTextStyle: const TextStyle(
-          color: AppColor.primaryButtonColor,
+          color: AppColor.blackColor,
           fontSize: 14,
           fontWeight: FontWeight.w400,
         ),
@@ -273,8 +286,8 @@ ThemeData nativeTheme() {
         ), //text field title
         titleLarge: TextStyle(
           color: AppColor.blackColor,
-          fontSize: 24,
-          fontWeight: FontWeight.w400,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
         ),
         titleMedium: TextStyle(
           color: AppColor.blackColor,
@@ -380,6 +393,19 @@ ThemeData nativeTheme() {
               fontWeight: FontWeight.w400,
             ),
           ),
+        ),
+      ),
+      listTileTheme: ListTileThemeData(
+        contentPadding: EdgeInsets.all(0),
+        titleTextStyle: TextStyle(
+          color: AppColor.blackColor,
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+        subtitleTextStyle: TextStyle(
+          color: AppColor.bodyTextColor,
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
         ),
       ),
     );

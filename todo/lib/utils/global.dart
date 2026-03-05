@@ -132,7 +132,7 @@ Future<dynamic> showExitDialog(BuildContext context) async {
 }
 
 ////* commonDialog */
-Future<dynamic> commonDialog(
+dynamic commonDialog(
   BuildContext context, {
   required String? titleText,
   required String? contentText,
@@ -140,7 +140,7 @@ Future<dynamic> commonDialog(
   required String? rightActionButtonText,
   required void Function()? leftActionButtonOnPressed,
   required void Function()? rightActionButtonOnPressed,
-}) async {
+}) {
   try {
     return showDialog(
       context: context,

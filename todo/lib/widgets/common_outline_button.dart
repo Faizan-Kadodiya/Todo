@@ -19,7 +19,6 @@ class CommonOutlineButton extends StatelessWidget {
         fixedSize: WidgetStateProperty.all(
           Size(Helper().getDevicewidth(context), 50),
         ),
-        backgroundColor: WidgetStateProperty.all(AppColor.secondaryButtonColor),
         side: WidgetStateProperty.all(
           BorderSide(color: AppColor.secondaryButtonColor, width: 0),
         ),
@@ -29,7 +28,7 @@ class CommonOutlineButton extends StatelessWidget {
       ),
       child: Text(
         buttonText ?? "",
-        style: TextStyle(color: AppColor.whiteColor, fontSize: 16),
+        style: TextStyle(color: AppColor.secondaryButtonColor, fontSize: 16),
       ),
     );
   }

@@ -6,7 +6,7 @@ import 'package:todo/utils/global.dart' as global;
 import 'package:get/get.dart';
 import 'package:todo/controllers/theme_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:todo/views/home_screen.dart';
+import 'package:todo/views/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           theme: nativeTheme(),
           debugShowCheckedModeBanner: false,
           initialRoute: "SplashScreen",
-          home: const HomeScreen(),
+          home: SplashScreen(),
         );
       },
     );
