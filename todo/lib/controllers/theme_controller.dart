@@ -38,7 +38,7 @@ class ThemeAndLanguageController extends GetxController {
   Future<void> getLanguage() async {
     try {
       appLanguages = await _getLanguageList();
-      if (global.sp!.containsKey("languageCode")) {
+      /* if (global.sp!.containsKey("languageCode")) {
         var code = global.sp!.get("languageCode");
         appLanguage = appLanguages!
             .where((e) => e['languageCode'] == code)
@@ -47,7 +47,7 @@ class ThemeAndLanguageController extends GetxController {
         appLanguage = appLanguages!
             .where((e) => e['languageCode'] == 'hi')
             .first;
-      }
+      } */
       await setSystemLanguage();
     } catch (e) {
       global.exceptionMessage(
@@ -104,13 +104,13 @@ class ThemeAndLanguageController extends GetxController {
         } else {
           isHindi = false;
         }
-        await global.sp!.setBool('isTranslateText', isHindi);
+        // await global.sp!.setBool('isTranslateText', isHindi);
       } else {
         log("Language Is Same");
       }
 
       await setSystemLanguage();
-      return global.sp!.setString("languageCode", appLanguage["languageCode"]);
+      // return global.sp!.setString("languageCode", appLanguage["languageCode"]);
     } catch (e) {
       global.exceptionMessage(
         classNameWithoutExt: "dart",

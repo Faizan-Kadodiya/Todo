@@ -42,7 +42,6 @@ dependencies:
   get: ^4.7.3
 
 #local Storage
-  shared_preferences: ^2.0.15
   sqflite: ^2.4.2
 
 #UI

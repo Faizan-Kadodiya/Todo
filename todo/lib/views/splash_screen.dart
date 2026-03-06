@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todo/constants/color_constant.dart';
+import 'package:todo/constants/space_constant.dart';
 import 'package:todo/controllers/splash_controller.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -10,13 +12,13 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: AppColor.blueColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             Icon(Icons.task_alt, size: 80, color: Colors.white),
-            SizedBox(height: 20),
+            height20,
             Text(
               "Todo App",
               style: TextStyle(

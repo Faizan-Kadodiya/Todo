@@ -4,11 +4,9 @@ import 'dart:io';
 import 'package:todo/constants/color_constant.dart';
 import 'package:todo/controllers/network_controller.dart';
 import 'package:todo/controllers/theme_controller.dart';
-import 'package:todo/models/user_model.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 //!----------------------------------------------------------------------Variables----------------------------------------------------------------------------------
 ///* int */
@@ -19,9 +17,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 ThemeAndLanguageController themeController =
     Get.find<ThemeAndLanguageController>();
 NetworkController networkController = Get.put(NetworkController());
-
-///* Local Storage */
-SharedPreferences? sp;
 
 ////* Api Parameter */
 String imageBaseUrl = "http://indiarides.voidek.in/public/assets//users_imgs/";
@@ -299,7 +294,7 @@ Future<Map<String, String>> getApiHeaders(bool authorizationRequired) async {
     }
 
     if (authorizationRequired) {
-      sp = await SharedPreferences.getInstance();
+      /* sp = await SharedPreferences.getInstance();
       if (sp!.getString("currentUser") != null) {
         UserModel userModel = UserModel.fromJson(
           json.decode(sp!.getString("currentUser")!),
@@ -308,7 +303,7 @@ Future<Map<String, String>> getApiHeaders(bool authorizationRequired) async {
         apiHeader.addAll({"Authorization": userModel.sessionToken!});
       } else {
         apiHeader.addAll({"Authorization": appId});
-      }
+      } */
     } else {
       apiHeader.addAll({"Authorization": appId});
     }

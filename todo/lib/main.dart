@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:todo/theme/native_theme.dart';
 import 'package:todo/utils/binding/controller_binding.dart';
-import 'package:todo/utils/global.dart' as global;
 import 'package:get/get.dart';
 import 'package:todo/controllers/theme_controller.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo/views/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  global.sp = await SharedPreferences.getInstance();
   Get.put(ThemeAndLanguageController());
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((
     _,
