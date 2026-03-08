@@ -48,7 +48,7 @@ class ThemeAndLanguageController extends GetxController {
             .where((e) => e['languageCode'] == 'hi')
             .first;
       } */
-      await setSystemLanguage();
+      // await setSystemLanguage();
     } catch (e) {
       global.exceptionMessage(
         classNameWithoutExt: "main.dart",
@@ -109,7 +109,7 @@ class ThemeAndLanguageController extends GetxController {
         log("Language Is Same");
       }
 
-      await setSystemLanguage();
+      // await setSystemLanguage();
       // return global.sp!.setString("languageCode", appLanguage["languageCode"]);
     } catch (e) {
       global.exceptionMessage(

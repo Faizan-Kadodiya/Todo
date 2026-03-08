@@ -13,8 +13,8 @@ import 'package:todo/utils/global.dart' as global;
 import 'package:todo/widgets/common_textfield_widget.dart';
 import 'package:todo/widgets/main_body_padding.dart';
 
-class HomeController extends FullLifeCycleController
-    with FullLifeCycleMixin, GetSingleTickerProviderStateMixin {
+class HomeController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   final formKey = GlobalKey<FormState>();
 
   final TextEditingController titleController = TextEditingController();
@@ -43,7 +43,6 @@ class HomeController extends FullLifeCycleController
   void onInit() {
     super.onInit();
     tabController = TabController(length: 4, vsync: this);
-    //get all todo list from local database and assign to todoList variable
     fetchTodos();
   }
 
@@ -53,50 +52,6 @@ class HomeController extends FullLifeCycleController
     titleController.dispose();
     descriptionController.dispose();
     searchController.dispose();
-  }
-
-  @override
-  void onResumed() {
-    log("App Comes From Background to Foreground");
-    //Resume Timer if it was running before going to background
-  }
-
-  @override
-  void onPaused() {
-    // Cancel all running timers when app goes to background
-    for (var timer in todoTimers.values) {
-      timer.cancel();
-    }
-    log("App Goes to Background");
-  }
-
-  @override
-  void onDetached() {
-    // Cancel all running timers when app is killed
-    for (var timer in todoTimers.values) {
-      timer.cancel();
-    }
-    log("App has been killed");
-  }
-
-  @override
-  void onInactive() {
-    // Cancel all running timers when app is inactive
-    for (var timer in todoTimers.values) {
-      timer.cancel();
-    }
-    log(
-      "App is temporarily inactive, not receiving user input, and not running in the foreground",
-    );
-  }
-
-  @override
-  void onHidden() {
-    // Cancel all running timers when app is hidden
-    for (var timer in todoTimers.values) {
-      timer.cancel();
-    }
-    log("App is in background but not killed");
   }
 
   Future<void> fetchTodos() async {
